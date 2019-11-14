@@ -1,0 +1,22 @@
+<h1><%= @cocktail.name  %></h1>
+<%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail)  %>
+<br><br>
+<p>List of ingredients & doses:</p>
+
+<% Dose.where(cocktail_id: @cocktail.id.to_i).each do |dose| %>
+<ul>
+<li>
+<%= dose.ingredient.name %>:
+<%= dose.description %>
+</li>
+</ul>
+<% end %>
+
+
+
+
+<%= link_to "Cocktails page", cocktails_path  %>
+
+
+
+
