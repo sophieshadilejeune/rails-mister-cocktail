@@ -1,12 +1,22 @@
-<h1>Welcome to the Cocktails page</h1>
-<%= link_to "Add a new cocktail", new_cocktail_path %>
+
+<div class="home-banner">
+<h1>Shake it for Me!</h1>
+</div>
+<div class="content">
+<%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary" %>
 
 <br><br>
-<ul>
+<div class="container">
+
 <% @cocktails.each do |cocktail| %>
-  <li>
-  <%= cocktail.name %>
-  </li>
-  <%= link_to "More info", cocktail_path(cocktail)  %>
-  <% end %>
-</ul>
+
+<div class="card">
+  <img src="<%= cocktail.image_URL %>" class="card-img-top" alt="image_cocktail">
+  <div class="card-body">
+    <h5 class="card-title"><%= cocktail.name %></h5>
+    <%= link_to "More info", cocktail_path(cocktail)  %>
+  </div>
+</div>
+ <% end %>
+</div>
+</div>

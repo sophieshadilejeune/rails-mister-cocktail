@@ -1,5 +1,6 @@
+<div class="content">
 <h1><%= @cocktail.name  %></h1>
-<%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail)  %>
+<%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"  %>
 <br><br>
 <p>List of ingredients & doses:</p>
 
@@ -12,10 +13,11 @@
 </ul>
 <% end %>
 
+<%= link_to "Delete this Cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?' }  %>
 
-
-
+<br><br>
 <%= link_to "Cocktails page", cocktails_path  %>
+</div>
 
 
 
