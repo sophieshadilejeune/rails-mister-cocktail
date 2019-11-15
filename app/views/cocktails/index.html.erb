@@ -11,7 +11,7 @@
 <% @cocktails.each do |cocktail| %>
 
 <div class="card">
-  <img src="<%= cocktail.image_URL %>" class="card-img-top" alt="image_cocktail">
+  <img src="<%= cl_image_path cocktail.photo %>" class="card-img-top" alt="image_cocktail">
   <div class="card-body">
     <h5 class="card-title"><%= cocktail.name %></h5>
     <%= link_to "More info", cocktail_path(cocktail)  %>
@@ -20,3 +20,4 @@
  <% end %>
 </div>
 </div>
+

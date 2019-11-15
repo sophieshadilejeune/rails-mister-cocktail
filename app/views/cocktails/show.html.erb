@@ -1,5 +1,9 @@
 <div class="content">
 <h1><%= @cocktail.name  %></h1>
+<div class="picture-large">
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+</div>
+<div>
 <%= link_to "Add a new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary"  %>
 <br><br>
 <p>List of ingredients & doses:</p>
@@ -18,7 +22,7 @@
 <br><br>
 <%= link_to "Cocktails page", root_path  %>
 </div>
-
+</div>
 
 
 
